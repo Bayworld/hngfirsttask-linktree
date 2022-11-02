@@ -4,15 +4,20 @@ import "primeicons/primeicons.css";                               //icons
 
 import { Avatar } from 'primereact/avatar';
 import { Badge } from 'primereact/badge';
+import 'primeflex/primeflex.css';
  
 
 function App() {
   return (
-    <div>
-      <Avatar image="profile.jpg" size="xlarge">
+    <div className="p-m-4">
+    <div className="p-d-flex p-jc-center p-ai-center">
+      <Avatar image="profile.jpg" size="xlarge" shape="circle" className="p-overlay-badge">
       <Badge value="4" severity="danger" />
       </Avatar>
- 
+    </div>
+    <div className="p-d-flex p-jc-center">
+    <p>Founder of Bayoweb</p>
+    </div>
     </div>
   );
 }
