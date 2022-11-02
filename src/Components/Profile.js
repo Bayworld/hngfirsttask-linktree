@@ -2,15 +2,17 @@ import React from "react";
 import { Avatar } from 'primereact/avatar';
 import { Badge } from 'primereact/badge';
 
-function Profile() {
+function Profile({ name, bio, avatar }) {
         return <div>
              <div className="p-d-flex p-jc-center p-ai-center">
-      <Avatar image="profile.jpg" size="xlarge" shape="circle" className="p-overlay-badge">
+      <Avatar image={avatar} 
+      size="xlarge" shape="circle" className="p-overlay-badge">
       <Badge value="4" severity="danger" />
       </Avatar>
     </div>
     <div className="p-d-flex p-jc-center">
-    <p>Founder of Bayoweb</p>
+        <h5>{ name }</h5>
+    <p>{bio}</p>
     </div>
         </div>;
 

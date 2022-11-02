@@ -4,28 +4,31 @@ import "primeicons/primeicons.css";                               //icons
 import 'primeflex/primeflex.css';
 
 
-import { Button } from 'primereact/button';
 
 import Profile from "./Components/Profile";
+import { useEffect } from "react";
+import React, {useState} from "react";
+import Links from "./Components/Link";
  
 
 function App() {
+  const [profile, setProfile] = useState({
+    "name": "Agboola Abayomi",
+    "bio": "",
+    "avatar": "",
+    "links": []
+
+  });
+
+  useEffect(() => {
+   fetch("/data/hngfirsttask.json")
+    .then((response) => response.json())
+    .then((data) => setProfile(data));
+  }, [])
   return (
     <div className="p-m-4">
-   <Profile/>
-
-    <div className="p-d-flex p-jc-center">
-    <div className="p-d-flex p-flex-column" style={{width: 70 + "%"}}>
-         <Button className="p-p-3 p-m-2">
-                <i className="pi pi-youtube px-2"></i>
-                <span className="px-3">Youtube</span>
-         </Button>
-         <Button className="p-p-3 p-m-2">
-                <i className="pi pi-twitter px-2"></i>
-                <span className="px-3">Twitter</span>
-         </Button>
-         </div>
-    </div>
+   <Profile  name={profile.name} bio={profile.bio} avatar={profile.avatar}/>
+   <Links/>
     </div>
   );
 }
