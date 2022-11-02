@@ -9,9 +9,10 @@ function Profile({ name, bio, avatar }) {
       size="xlarge" shape="circle" className="p-overlay-badge">
       <Badge value="4" severity="danger" />
       </Avatar>
+      <h1 className="p-m-2">{ name }</h1>
     </div>
     <div className="p-d-flex p-jc-center">
-        <h5>{ name }</h5>
+        
     <p>{bio}</p>
     </div>
         </div>;
