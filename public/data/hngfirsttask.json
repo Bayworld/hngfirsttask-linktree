@@ -1,0 +1,17 @@
+{
+    "name": "Agboola Abayomi",
+    "bio": "founder of Bayoweb",
+    "avatar": "",
+    "links": [
+        {
+            "name": "Twitter",
+            "url": "",
+            "icon": "twitter"
+        },
+        {
+            "name": "Slack",
+            "url": "",
+            "icon": "slack"
+        }
+    ]
+}
